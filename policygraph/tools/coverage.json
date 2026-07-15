@@ -1,0 +1,16 @@
+{
+  "_purpose": "atom_coverage_layer -- NOT compatibility. Its only job is to make every canonical prerequisite token appear in the synthetic training gold at least once, so the held-out stays COMPOSITIONAL-OOD (seen atoms, unseen composition) instead of LEXICAL-OOD (a token first appearing at eval). These pairings are coverage scaffolding chosen to be (a) valid for the action, (b) NOT equal to any held-out signature, (c) mildly plausible -- they are deliberately kept OUT of compatibility so compatibility keeps meaning 'low-controversy business combinations', not 'everything training needs'.",
+  "_rule": "Each entry teaches one prerequisite token via a single category+prereq or numeric+prereq conjunction. A model that learns these sees the token; the exact held-out combination is still never shown.",
+  "prerequisite_coverage": [
+    {"action": "issue_reimbursement",    "category": "family_travel",                    "prereq": "manager_approval",              "note": "teaches manager_approval (held-out uses hotel_suite/valet/seat/mileage/rental)"},
+    {"action": "issue_reimbursement",    "category": "first_class_airfare",              "prereq": "vp_approval",                   "note": "teaches vp_approval (held-out uses private_driver/conference/lounge_membership)"},
+    {"action": "approve_expense_report", "numeric":  "client_entertainment_event_amount", "prereq": "ceo_authorization",             "note": "teaches ceo_authorization (held-out uses charitable_gala)"},
+    {"action": "issue_reimbursement",    "category": "private_driver",                   "prereq": "c_suite_authorization",         "note": "teaches c_suite_authorization (held-out uses chauffeur_service)"},
+    {"action": "issue_reimbursement",    "category": "gift_card",                        "prereq": "cash_withdrawal_approval",      "note": "teaches cash_withdrawal_approval (held-out uses atm_withdrawal); gift cards are cash-equivalents"},
+    {"action": "approve_expense_report", "category": "client_meal",                      "prereq": "business_purpose_documentation", "note": "teaches business_purpose_documentation (held-out uses hospitality)"},
+    {"action": "approve_expense_report", "category": "encrypted_external_storage_drive", "prereq": "cio_clearance",                 "note": "teaches cio_clearance (held-out uses generative_ai_subscription)"},
+    {"action": "approve_expense_report", "category": "generative_ai_subscription",       "prereq": "it_security_approval",          "note": "teaches it_security_approval (held-out uses encrypted_external_storage_drive)"},
+    {"action": "approve_expense_report", "category": "hospitality",                      "prereq": "legal_approval",                "note": "teaches legal_approval (held-out uses personal_printer)"},
+    {"action": "issue_reimbursement",    "category": "commute",                          "prereq": "approve_expense_report",        "note": "teaches the approve_expense_report prerequisite token (held-out uses it standalone)"}
+  ]
+}

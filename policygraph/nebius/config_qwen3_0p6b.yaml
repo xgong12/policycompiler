@@ -1,0 +1,39 @@
+# Axolotl config for PolicyGraph SFT — Qwen3-0.6B-Base.
+# Same training data / LoRA r16-a32 / seq_len 1024 / 2 epochs across all sizes; only base_model,
+# output_dir, and memory settings differ. Data is tokenizer-agnostic (plain text), so no data
+# change is needed when switching model family/size.
+
+base_model: Qwen/Qwen3-0.6B-Base
+
+adapter: lora
+
+datasets:
+  - path: /workspace/data/dataset/train.jsonl
+    type: alpaca
+    ds_type: json
+
+val_set_size: 0.05
+
+sequence_len: 1024
+micro_batch_size: 8
+gradient_accumulation_steps: 2
+num_epochs: 2
+learning_rate: 2e-4
+warmup_ratio: 0.05
+logging_steps: 10
+output_dir: /workspace/output/run-qwen3-0p6b
+
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+save_strategy: "epoch"
+bf16: auto
