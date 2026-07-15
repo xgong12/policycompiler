@@ -4,7 +4,7 @@
 
 Built for the **Nebius Serverless AI Builders Challenge** — track: *Fine-tuning pipelines*. The compiler is a **Qwen3 + LoRA** model fine-tuned with Nebius Serverless AI Jobs.
 
-The entire pipeline (LoRA fine-tuning + evaluation) is easy to reproduce on **Nebius Serverless AI** — the serverless GPU platform from the sponsor of **Nebius Serverless AI Builders Challenge****. **Please see [**Fine-tune and evaluate on Nebius Serverless AI ↓**](#fine-tune-and-evaluate-on-nebius-serverless-ai) for the full runbook.
+The entire pipeline (LoRA fine-tuning + evaluation) is easy to reproduce on **Nebius Serverless AI** — the serverless GPU platform from the sponsor of **Nebius Serverless AI Builders Challenge**. Please see [**Fine-tune and evaluate on Nebius Serverless AI ↓**](#fine-tune-and-evaluate-on-nebius-serverless-ai) for the full runbook.
 
 Agentic workflows often need to comply with complex organizational and domain-specific policies. Today, LLMs are frequently used as runtime guardrails, but relying on them for enforcement makes compliance decisions inherently probabilistic. An LLM may miss applicable constraints, fail to account for dependencies between policy rules, or produce inconsistent decisions for semantically equivalent inputs. Moreover, invoking an LLM for every policy check increases token usage, runtime latency, and inference cost.
 
