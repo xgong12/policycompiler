@@ -13,7 +13,7 @@ In practice, many policies can be translated into structured rules and evaluated
 Manually converting policies into structured rules is time-consuming and difficult to scale. This project fine-tunes a small language-model policy compiler which translates natural-language
 policies into an executable structured JSON rule. Human reviewers can then validate, edit, and approve the generated rules before deployment. When policies change or new regulations are introduced, this compiler-assisted approach helps organizations update enforcement rules more efficiently and consistently.
 
-Our fine-tuned model serves as the core of the offline policy compiler shown in the three colored boxes. This project delivers the fine-tuned compiler and the deterministic policy engine that executes the compiled rules. It does not implement the full end-to-end agentic deployment (a live agent emitting tool calls, and the execute/block actuation); those parts of the figure illustrate how PolicyCompiler would be integrated to a broader system and are left as future work.
+Our fine-tuned model serves as the core of the offline policy compiler shown in the three colored boxes. This project delivers the fine-tuned compiler and a deterministic policy engine for evaluating the compiled rules. It does not implement a full end-to-end agentic deployment: a live agent emitting tool calls and the execute/block actuation layer are shown only to illustrate how PolicyCompiler could integrate into a broader system, and are left as future work.
 
 <p align="center">
   <img
