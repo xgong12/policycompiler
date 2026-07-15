@@ -1,6 +1,6 @@
 # PolicyCompiler
 
-*A mini policy compiler for translating natural-language policies into executable structured JSON rules.*
+*A lightweight policy compiler for translating natural-language policies into executable structured JSON rules.*
 
 Built for the **Nebius Serverless AI Builders Challenge** — track: *Fine-tuning pipelines*. The compiler is a **Qwen3 + LoRA** model fine-tuned with Nebius Serverless AI Jobs.
 
